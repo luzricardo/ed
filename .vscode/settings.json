@@ -1,0 +1,89 @@
+{
+    // --- File associations ---
+    "files.associations": {
+        "*.sql": "jinja-sql",
+        "*.yml": "yaml",
+        "*.yaml": "yaml"
+    },
+    // --- Editor ---
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        88,
+        120
+    ],
+    "editor.trimAutoWhitespace": true,
+    // --- Files ---
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "files.exclude": {
+        "**/.git": false,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/target": false,
+        "**/dbt_packages": false,
+        "**/.user.yml": true
+    },
+    // --- SQL / Jinja-SQL formatting ---
+    "[jinja-sql]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "innoverio.vscode-dbt-power-user"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "innoverio.vscode-dbt-power-user"
+    },
+    // --- YAML ---
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.tabSize": 2
+    },
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_yml_files.json": [
+            "models/**/*.yml",
+            "models/**/*.yaml",
+            "seeds/**/*.yml",
+            "seeds/**/*.yaml",
+            "snapshots/**/*.yml",
+            "snapshots/**/*.yaml",
+            "analyses/**/*.yml",
+            "analyses/**/*.yaml",
+            "macros/**/*.yml",
+            "macros/**/*.yaml"
+        ],
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_project.json": [
+            "dbt_project.yml",
+            "dbt_project.yaml"
+        ],
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/packages.json": [
+            "packages.yml",
+            "packages.yaml"
+        ],
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/selectors.json": [
+            "selectors.yml",
+            "selectors.yaml"
+        ]
+    },
+    "yaml.validate": true,
+    "yaml.hover": true,
+    "yaml.completion": true,
+    // --- Python ---
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    // --- Search ---
+    "search.exclude": {
+        "**/target": true,
+        "**/dbt_packages": true,
+        "**/.git": true
+    },
+    // --- Environment variables ---
+    "terminal.integrated.env.linux": {
+        "DBT_PROJECT_DIR": "${workspaceFolder}/main",
+        "DBT_PROFILES_DIR": "${workspaceFolder}/.dbt",
+        "DBT_USER": "henrluz"
+    }
+}

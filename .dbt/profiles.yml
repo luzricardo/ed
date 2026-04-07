@@ -1,0 +1,15 @@
+main:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: session
+      schema: raw
+      host: NA # not used, but required by `dbt-core`
+      server_side_parameters:
+        "spark.driver.memory": "2g"
+        "spark.eventLog.enabled": "true"
+        "spark.eventLog.dir": "file:///home/dataeng/.spark-events"
+        "spark.sql.adaptive.coalescePartitions.parallelismFirst": "false"
+        "spark.sql.adaptive.advisoryPartitionSizeInBytes": "268435456"
+        "spark.sql.adaptive.coalescePartitions.minPartitionSize": "67108864"
